@@ -59,7 +59,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="取消">&nbsp;&nbsp;<input type="submit" value="保存" style="background: #f01455;border:none">
+        <input type="submit" value="取消">&nbsp;&nbsp;<input type="submit" value="保存" >
 
 </div>
 </form>
