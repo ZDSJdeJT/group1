@@ -32,7 +32,7 @@ public class loginservlet extends HttpServlet {
             //将用户的对象放到session中
             req.getSession().setAttribute("user", user);
             //转发到result.jsp页面
-            req.getRequestDispatcher("home.jsp").forward(req, resp);
+            req.getRequestDispatcher("A home.jsp").forward(req, resp);
             /**
              response.sendRedirect(url)跳转到指定的URL地址，产生一个新的request，所以要传递参数只有在url后加参
              数，如：

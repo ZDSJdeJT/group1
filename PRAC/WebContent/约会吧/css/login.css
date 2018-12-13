@@ -70,7 +70,7 @@ input[type="email"],input[type="password"],input[type="text"],input[type="tel"]{
   color:#555;
 }
 
-input[type="submit"]{
+input[type="button"]{
   width:100%;
   background:#3399cc;
   border:0;

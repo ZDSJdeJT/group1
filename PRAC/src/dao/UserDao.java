@@ -84,7 +84,7 @@ public class UserDao {
             //执行查询获取结果集
             ResultSet rs = ps.executeQuery();
 
-            //判断结果集是否有效,如过有效，则对用户进行赋值
+            //判断结果集是否有效,如果有效，则对用户进行赋值
             while (rs.next()) {
 
                 user = new User();
@@ -108,5 +108,46 @@ public class UserDao {
 
         return user;
     }
+    
+    
+    
+    public User changpsw(String username, String phonenumber) {
+        //实例化一个用户对象
+        User user =null;
+        Connection conn = DataBaseUtil.getConn();
+        String sql = "select * from USERS where username = ? and phonenumber = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, phonenumber);
+            //执行查询获取结果集
+            ResultSet rs = ps.executeQuery();
+
+            //判断结果集是否有效,如果有效，则对用户进行赋值
+            while (rs.next()) {
+
+                user = new User();
+                //对用户对象进行复制
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+
+                user.setPhoneenumber(rs.getString("phonenumber"));
+
+
+                
+            }
+            //释放资源
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DataBaseUtil.closeConn(conn);
+        }
+
+        return user;
+    }
 }
+
+
 

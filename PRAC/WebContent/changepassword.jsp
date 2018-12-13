@@ -7,7 +7,7 @@
 
   <meta charset="UTF-8">
 
-  <title>注册(ง •̀_•́)ง</title>
+  <title>修改/找回密码⊙ω⊙</title>
   <style>
   A {text-decoration: NONE}
   footer{position:absolute;bottom:0;width:100%;height:20px}
@@ -20,19 +20,18 @@
 
 <body background="http://localhost:8080/PRAC/约会吧/img/join.jpg">
 <div style="padding-top:80px">
-  <span href="#" class="button" id="toggle-login">注册</span>
+  <span href="#" class="button" id="toggle-login">重置密码</span>
 
 <div id="login">
   <div id="triangle"></div>
-  <h1>加入“约会吧”~</h1>
-  <form name="form" action="http://localhost:8080/PRAC/joinservlet" method="post" onsubmit="return checkAll()">
-  	<input type="text" required id="username" onkeyup="YHMonblus()" name="username"  placeholder="用户名" /><span id="YHMerror"></span>
+  <h1>输入您的信息以修改密码~</h1>
+    	
+  <form name="form" action="http://localhost:8080/PRAC/changepasswordservlet" method="post" onsubmit="return checkAll()">
+  <input type="text" required id="username" onkeyup="YHMonblus()" name="username"  placeholder="用户名" /><span id="YHMerror"></span>
     <input type="tel" required id="phone" onkeyup="checkPhone()" name="phonenumber" placeholder="电话号码" /><span id="num"></span>
-    <input type="text" required id="email" onkeyup="checkemail();" name="email" placeholder="Email" /><span id="eml"></span>
-    <input type="password" required id="psw0"  onkeyup="checkpsw()" name="password" placeholder="密码" />
-    <input type="password"  required id="psw1"  onkeyup="checkpsw()"placeholder="确认密码" /><span id="ps"></span>
-    <div align="left" style="padding-top:10px; padding-bottom:10px"><font size="+2" color="#666666">您的性别：<input type="radio" name="sex" value="男" checked="checked"/>男&nbsp;&nbsp;<input type="radio" name="sex" value="女"/>女</font></div>
-    <input type="submit" id="submit" value="完成注册"  class="button" />
+        <input type="password" required id="psw0"  onkeyup="checkpsw()" name="password" placeholder="新的密码" />
+    <input type="password"  required id="psw1"  onkeyup="checkpsw()"placeholder="确认新的密码" /><span id="ps"></span>
+    <input type="submit" id="submit" value="重新设置密码"  class="button" />
     <div style="padding-top:10px"><a href="http://localhost:8080/PRAC/login.jsp">已有账号？点击这里登录~</a>&nbsp;
 </form>
 </div>
@@ -61,7 +60,6 @@ function YHMonblus(){
         return true;
     }
 }
-
 function checkPhone(){ 
     var phone = document.getElementById('phone').value;
     if(!(/^1(3|4|5|7|8)\d{9}$/.test(phone))){ 
@@ -72,18 +70,7 @@ function checkPhone(){
         return true;
     }
 }
-function checkemail(){
-    var email = document.getElementById('email').value;
-	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	if (filter.test(email)) {
-		document.getElementById("eml").innerHTML="<font color='green'>BINGO!</font>";
-        return true;
-	}
-	else {
-		document.getElementById("eml").innerHTML="<font color='red'>请输入正确的电子邮箱！</font>";
-        return false;
-	}
-	}
+
 function checkpsw(){
 	var psw0 = document.getElementById("psw0");
 	var psw1 = document.getElementById("psw1");
@@ -111,11 +98,11 @@ function checkpsw(){
 }
 
 function checkAll(){  
-	        var email = checkemail();  
 	        var name = YHMonblus();  
+		        var password = checkpsw();  
+	        var email = checkemail();  
 	        var id = checkPhone();  
-	        var password = checkpsw();  
-	        if(email&&name&&id&&password){  
+	        if(email&&id&&password&&name){  
 	            return true;  
 	        }else{  
 	            return false;  
