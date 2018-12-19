@@ -7,7 +7,7 @@
     <title>约会信息展示</title>
   <link rel="stylesheet" type="text/css" href="display.css">
 </head>
-<body background="png/e.png">
+<body background="img/bg.png">
 <header>
     <div style="text-align: center;background: none">
         <h1>发布约会</h1>
@@ -16,7 +16,7 @@
 
 <div class="message1" >
     <div class="div1">
-    <img src="png/g.png" width="200" height="200"/>
+    <img src="img/g.png" width="200" height="200"/>
     </div>
 
     <div class="div1">
@@ -43,7 +43,7 @@
     </div>
     <div style="text-align: right; line-height: 150px">
       <form>
-        <input type="image" src="png/圆环.png">
+        <input type="image" src="img/圆环.png">
         <a href="#">响应约会</a>
       </form>
 
@@ -51,7 +51,7 @@
 </div>
 <div class="message1" >
     <div class="div1">
-        <img src="png/d.png" width="200" height="200"/>
+        <img src="img/d.png" width="200" height="200"/>
     </div>
 
     <div class="div1">
@@ -78,7 +78,7 @@
     </div>
     <div style="text-align: right; line-height: 150px">
       <form>
-        <input type="image" src="png/圆环.png"><a href="#">响应约会</a>
+        <input type="image" src="img/圆环.png"><a href="#">响应约会</a>
 
       </form>
 
